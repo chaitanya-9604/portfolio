@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaitanya - PortfolioX </title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-black text-white font-mono transition-colors duration-500 overflow-x-hidden">
+    <!-- Custom Cursor -->
+    <div id="cursor" class="fixed w-4 h-4 bg-blue-500 rounded-full pointer-events-none z-50 mix-blend-difference"></div>
+
+    <!-- Controls -->
+    <div class="fixed top-4 right-4 z-50 flex space-x-4">
+        <button id="dark-toggle" class="p-2 bg-gray-900 rounded-full hover:bg-gray-800">🌙</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen relative flex items-center justify-center overflow-hidden">
+        <canvas id="particles" class="absolute inset-0"></canvas>
+        <div class="text-center z-10">
+            <h1 class="text-6xl md:text-8xl font-bold hologram" data-text="Chaitanya Coder">Chaitanya </h1>
+            <p class="text-2xl mt-4 glow-text opacity-1"> Web developer | Hardware </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-8 relative">
+        <h2 class="text-5xl font-bold text-center mb-12 glitch" data-text="About">About</h2>
+        <div class="max-w-lg mx-auto opacity-">
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="face front">Web Dev</div>
+                    <div class="face back">Backend</div>
+                    <div class="face right">AI</div>
+                    <div class="face left">Algorithms</div>
+                    <div class="face top">Creative</div>
+                    <div class="face bottom">Coffee</div>
+                </div>
+            </div>
+            <p class="text-lg mt-8 text-center">> I'm Chaitanya, a coder who thrives at the intersection of tech and creativity. From crafting seamless web apps to tinkering with AI, I'm all about pushing boundaries.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 px-8 bg-gray-900 parallax-bg">
+        <h2 class="text-5xl font-bold text-center mb-12 glitch" data-text="Skills">Skills</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="skill-card"><span>Python</span><p>90%</p></div>
+            <div class="skill-card"><span>JavaScript</span><p>85%</p></div>
+            <div class="skill-card"><span>React</span><p>80%</p></div>
+            <div class="skill-card"><span>Node.js</span><p>75%</p></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-20 px-8 bg-gray-900">
+        <h2 class="text-5xl font-bold text-center mb-12 glitch" data-text="Projects">Projects</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="project-card tilt-card" data-tilt data-tilt-max="10" data-project="Expences manager">
+                <div class="front">> Expences manager</div>
+                <div class="back p-4">
+                    <p>CLI task manager with sass. Python.</p>
+                    <button class="text-blue-400 hover:underline">Details</button>
+                </div>
+            </div>
+            <div class="project-card tilt-card" data-tilt data-tilt-max="10" data-project="weatherx">
+                <div class="front">> WeatherX</div>
+                <div class="back p-4">
+                    <p>Weather app with flair. React.</p>
+                    <button class="text-blue-400 hover:underline">Details</button>
+                </div>
+            </div>
+            <div class="project-card tilt-card" data-tilt data-tilt-max="10" data-project="codebot">
+                <div class="front">> CodeBot</div>
+                <div class="back p-4">
+                    <p>AI coding assistant. Node.js.</p>
+                    <button class="text-blue-400 hover:underline">Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-20 px-8">
+        <h2 class="text-5xl font-bold text-center mb-12 glitch" data-text="Blog">Blog</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="blog-post"><h3>Python Tricks</h3><p>Feb 2025 - 5 min read</p></div>
+            <div class="blog-post"><h3>React Hooks Deep Dive</h3><p>Jan 2025 - 7 min read</p></div>
+            <div class="blog-post"><h3>Why Node.js Rocks</h3><p>Dec 2024 - 4 min read</p></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 px-8 bg-gray-900">
+        <h2 class="text-5xl font-bold text-center mb-12 glitch" data-text="Contact">Contact</h2>
+        <div class="max-w-lg mx-auto terminal-form relative">
+            <div class="p-6 bg-black border border-blue-500 rounded-lg shadow-lg">
+                <p class="typewriter-input mb-4" data-text=" User "> User </p>
+                <input type="text" placeholder="Name" class="input-field" required>
+                <input type="email" placeholder="Email" class="input-field" required>
+                <textarea placeholder="Message" class="input-field h-24" required></textarea>
+                <button type="submit" class="pulse-btn mt-4">> Send</button>
+                <p class="mt-2 text-sm text-gray-500">Try typing "help" in the Name field!</p>
+            </div>
+        </div>
+        <div class="mt-8 text-center">
+            <a href="https://github.com/yourusername" target="_blank" class="mx-4 text-2xl hover:text-blue-400"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="mx-4 text-2xl hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:you@example.com" class="mx-4 text-2xl hover:text-blue-400"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-50">
+        <div class="bg-gray-900 p-8 rounded-lg max-w-2xl w-full">
+            <h3 id="modal-title" class="text-2xl font-bold mb-4"></h3>
+            <p id="modal-desc" class="mb-4"></p>
+            <div id="modal-media" class="mb-4"></div>
+            <button id="modal-close" class="pulse-btn">Close</button>
+        </div>
+    </div>
+
+    <footer class="py-8 text-center text-gray-500">
+        <p>© 2025 Chaitanya. Built in the future.</p>
+    </footer>
+</body>
+</html>
+
